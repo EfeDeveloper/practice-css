@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+
+
+a {
+    position: relative;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 10px;
+    text-align: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transform-origin: center center;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    font-size: 15px;
+    background: rgb(255, 255, 255, .05);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    text-transform: uppercase;
+    color: #ecf0f1;
+    transition: 1s;
+}
+
+span.front {
+    transform: rotateX(0deg) translateZ(20px);
+}
+
+a:hover span.front {
+    transform: rotateX(-180deg) translateZ(20px);
+}
+
+span.end {
+    transform: rotateX(180deg) translateZ(20px);
+}
+
+a:hover span.end {
+    transform: rotateX(0deg) translateZ(20px);
+}
+
+span.center {
+    background: linear-gradient(to left, #ffbe76, #ff7979);
+}
+
+span.center:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left,#f0932b, #eb4d4b);
+    transform: translateZ(-1px);
+}
+
+a:hover span.center {
+    transform: rotateX(-180deg);
+}
+
+.box .content span:hover {
+    color: #ced6e0;
+    }
+
+a:hover span {
+    display: inline-block;
+    transform: scale(0.98);
+}
+
+.box .content a {
+    position: relative;
+    margin: 20px 0 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid #ecf0f1;
+    display: inline-flex;
+    transition: 0.5s;
+    transform: translateY(-40px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.box.box:hover .content a {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
