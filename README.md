@@ -1,2 +1,2 @@
-# EdFer-Business-card
-Professional profile from scratch
+# Practice-css
+Project to practice some css
